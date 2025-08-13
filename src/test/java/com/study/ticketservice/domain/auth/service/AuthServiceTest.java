@@ -50,8 +50,6 @@ class AuthServiceTest {
     @DisplayName("refresh: 쿠키 없음/무효. 401 반환 및 null")
     void refresh_unauthorized() {
         given(jwtUtil.extractRefreshTokenFromCookie(httpServletRequest)).willReturn(null);
-
-        // login 검증에서도 ApiException을 기대하므로, 사용자 조회가 비어있도록 스텁
         given(userRepository.findByEmail("no@test.com")).willReturn(Optional.empty());
 
         assertThatThrownBy(() -> authService.login(new LoginRequest("no@test.com", "pw"), httpServletResponse))
