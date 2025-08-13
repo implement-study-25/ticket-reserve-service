@@ -2,16 +2,17 @@ package com.study.ticketservice.domain.auth.service;
 
 import com.study.ticketservice.common.exception.ApiException;
 import com.study.ticketservice.domain.auth.controller.request.LoginRequest;
-import com.study.ticketservice.domain.auth.controller.response.LoginResponse;
 import com.study.ticketservice.domain.auth.repository.UserRepository;
 import com.study.ticketservice.domain.auth.repository.UserRoleMapRepository;
 import com.study.ticketservice.utils.JwtUtil;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.bean.override.mockito.MockitoBean;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.util.Optional;
 
@@ -22,14 +23,15 @@ import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.atLeastOnce;
 
-@SpringBootTest
+@ExtendWith(MockitoExtension.class)
 class AuthServiceTest {
 
-    @Autowired AuthService authService;
+    @InjectMocks AuthService authService;
 
-    @MockitoBean JwtUtil jwtUtil;
-    @MockitoBean UserRepository userRepository;
-    @MockitoBean UserRoleMapRepository userRoleMapRepository;
+    @Mock JwtUtil jwtUtil;
+    @Mock UserRepository userRepository;
+    @Mock UserRoleMapRepository userRoleMapRepository;
+    @Mock PasswordEncoder passwordEncoder;
 
     // 로컬 Mockito 목 사용
     jakarta.servlet.http.HttpServletResponse httpServletResponse = org.mockito.Mockito.mock(jakarta.servlet.http.HttpServletResponse.class);
@@ -48,6 +50,9 @@ class AuthServiceTest {
     @DisplayName("refresh: 쿠키 없음/무효. 401 반환 및 null")
     void refresh_unauthorized() {
         given(jwtUtil.extractRefreshTokenFromCookie(httpServletRequest)).willReturn(null);
+
+        // login 검증에서도 ApiException을 기대하므로, 사용자 조회가 비어있도록 스텁
+        given(userRepository.findByEmail("no@test.com")).willReturn(Optional.empty());
 
         assertThatThrownBy(() -> authService.login(new LoginRequest("no@test.com", "pw"), httpServletResponse))
                 .isInstanceOf(ApiException.class);
