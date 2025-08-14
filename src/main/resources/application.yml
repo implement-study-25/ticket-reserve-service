@@ -10,7 +10,7 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: validate
+      ddl-auto: update
     show-sql: true
     properties:
       hibernate:
@@ -20,3 +20,13 @@ spring:
     redis:
       host: ${REDIS_HOST:localhost}
       port: ${REDIS_PORT:6379}
+
+jwt:
+  token:
+    access:
+      expire-second: 43200
+      access-secret: b37d47c4b8aeb3f4ff7e0155f36c4483a224f99861f60aa745abcc1dd4a81484
+    refresh:
+        expire-second: 2592000
+        renewal-interval-second: 50400
+        refresh-secret: 46d3bfb7703995bad17525464c2fdd1324ab86cda2b7b836eb0f05dbb5aef970
