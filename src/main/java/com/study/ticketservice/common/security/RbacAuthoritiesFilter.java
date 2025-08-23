@@ -56,6 +56,14 @@ public class RbacAuthoritiesFilter extends OncePerRequestFilter {
         filterChain.doFilter(request, response);
     }
 
+    @Override
+    protected boolean shouldNotFilter(HttpServletRequest request) {
+    String uri = request.getRequestURI();
+    return uri.equals("/api/v1/auth/login")
+        || uri.equals("/api/v1/auth/logout")
+        || uri.equals("/api/v1/auth/refresh");
+    }
+
     private Set<String> getAuthorities(Long userId) {
         List<String> roleNames = userRoleMapRepository.findRoleNamesByUserId(userId);
         Set<String> authorities = new HashSet<>(roleNames);
