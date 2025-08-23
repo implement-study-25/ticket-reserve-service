@@ -46,7 +46,7 @@ public class SeatWriterImpl implements SeatWriter {
         List<SeatEntity> entities = seats.stream()
                 .map(SeatEntity::from)
                 .toList();
-        
+
         List<SeatEntity> savedEntities = seatJpaRepository.saveAll(entities);
         
         return savedEntities.stream()

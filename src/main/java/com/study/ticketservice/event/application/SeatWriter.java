@@ -4,6 +4,10 @@ import com.study.ticketservice.event.domain.Seat;
 
 import java.util.List;
 
+/**
+ * Seat 쓰기 전용 인터페이스
+ * 좌석 생성, 수정 관련 모든 쓰기 작업을 담당
+ */
 public interface SeatWriter {
     
     /**

@@ -6,7 +6,6 @@ import lombok.Getter;
 
 /**
  * Event 도메인 관련 에러 코드 정의
- * 도메인 레이어에 위치하여 순수성 보장
  */
 @Getter
 @AllArgsConstructor

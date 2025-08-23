@@ -10,6 +10,7 @@ import org.springframework.data.repository.query.Param;
 public interface EventJpaRepository extends JpaRepository<EventEntity, Long> {
     
     /**
+     * 키워드 검색으로 이벤트 조회
      * @param keyword 검색 키워드 (null이면 전체 조회)
      * @param pageable 페이징 정보
      * @return 페이징된 이벤트 엔티티 목록
@@ -20,6 +21,7 @@ public interface EventJpaRepository extends JpaRepository<EventEntity, Long> {
     Page<EventEntity> findEventsWithKeyword(@Param("keyword") String keyword, Pageable pageable);
     
     /**
+     * 키워드 및 상태로 이벤트 조회
      * @param keyword 검색 키워드
      * @param status 이벤트 상태
      * @param pageable 페이징 정보
@@ -32,5 +34,4 @@ public interface EventJpaRepository extends JpaRepository<EventEntity, Long> {
     Page<EventEntity> findEventsWithKeywordAndStatus(@Param("keyword") String keyword, 
                                                     @Param("status") EventStatus status, 
                                                     Pageable pageable);
-    
 }

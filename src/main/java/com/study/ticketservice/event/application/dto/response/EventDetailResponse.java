@@ -11,29 +11,17 @@ import java.time.LocalDateTime;
 public record EventDetailResponse(
 
     Long eventId,
-    
     String title,
-    
     String description,
-    
     EventStatus status,
-
     LocalDateTime startsAt,
-
     LocalDateTime endsAt,
-
     int totalRows,
-
     int totalCols,
- 
     int totalSeats,
-
     int reservedSeats,
-
     long paidAmount,
-    
     LocalDateTime createdAt,
-
     LocalDateTime updatedAt
 ) {
     /**

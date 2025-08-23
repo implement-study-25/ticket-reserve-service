@@ -6,6 +6,7 @@ import org.springframework.data.domain.Pageable;
 
 /**
  * Event 읽기 전용 인터페이스
+ * 이벤트 조회 관련 모든 읽기 작업을 담당
  */
 public interface EventReader {
     
@@ -27,6 +28,7 @@ public interface EventReader {
     
     /**
      * 이벤트 존재 여부 확인
+     * 좌석 조회 등에서 이벤트 존재 확인용으로 사용
      * @param eventId 확인할 이벤트 ID
      * @return 존재하면 true, 없으면 false
      */

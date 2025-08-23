@@ -16,9 +16,7 @@ public record SeatDetailResponse(
     int col,
 
     String seatNumber,
-    
     int price,
-    
     SeatStatus status
 
 ) {

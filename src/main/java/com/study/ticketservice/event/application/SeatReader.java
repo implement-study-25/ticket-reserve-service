@@ -7,10 +7,12 @@ import java.util.List;
 
 /**
  * Seat 읽기 전용 인터페이스
+ * 좌석 조회 관련 모든 읽기 작업을 담당
  */
 public interface SeatReader {
     
     /**
+     * 좌석 ID로 단일 좌석 조회
      * @param seatId 조회할 좌석 ID
      * @return Seat 도메인 객체
      * @throws ApiException 좌석이 존재하지 않을 경우 SEAT_NOT_FOUND
