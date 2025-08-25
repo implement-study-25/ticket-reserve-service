@@ -1,6 +1,7 @@
-package com.study.ticketservice.event.infrastructure;
+package com.study.ticketservice.domain.event.repository;
 
-import com.study.ticketservice.event.domain.SeatStatus;
+import com.study.ticketservice.domain.event.entity.SeatEntity;
+import com.study.ticketservice.domain.event.enums.SeatStatus;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

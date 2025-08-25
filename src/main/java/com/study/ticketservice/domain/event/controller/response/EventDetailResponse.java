@@ -1,7 +1,8 @@
-package com.study.ticketservice.event.application.dto.response;
+package com.study.ticketservice.domain.event.controller.response;
 
-import com.study.ticketservice.event.domain.Event;
-import com.study.ticketservice.event.domain.EventStatus;
+
+import com.study.ticketservice.domain.event.entity.Event;
+import com.study.ticketservice.domain.event.enums.EventStatus;
 
 import java.time.LocalDateTime;
 

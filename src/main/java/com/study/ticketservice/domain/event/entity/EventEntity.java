@@ -1,7 +1,6 @@
-package com.study.ticketservice.event.infrastructure;
+package com.study.ticketservice.domain.event.entity;
 
-import com.study.ticketservice.event.domain.Event;
-import com.study.ticketservice.event.domain.EventStatus;
+import com.study.ticketservice.domain.event.enums.EventStatus;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

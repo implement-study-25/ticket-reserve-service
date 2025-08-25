@@ -1,6 +1,7 @@
-package com.study.ticketservice.event.infrastructure;
+package com.study.ticketservice.domain.event.repository;
 
-import com.study.ticketservice.event.domain.EventStatus;
+import com.study.ticketservice.domain.event.entity.EventEntity;
+import com.study.ticketservice.domain.event.enums.EventStatus;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -32,6 +33,6 @@ public interface EventJpaRepository extends JpaRepository<EventEntity, Long> {
            "AND (:status IS NULL OR e.status = :status) " +
            "ORDER BY e.createdAt DESC")
     Page<EventEntity> findEventsWithKeywordAndStatus(@Param("keyword") String keyword, 
-                                                    @Param("status") EventStatus status, 
+                                                    @Param("status") EventStatus status,
                                                     Pageable pageable);
 }

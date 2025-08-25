@@ -1,15 +1,15 @@
-package com.study.ticketservice.event.application;
+package com.study.ticketservice.domain.event.service;
 
 import com.study.ticketservice.common.exception.ApiException;
-import com.study.ticketservice.event.application.dto.request.EventCreateRequest;
-import com.study.ticketservice.event.application.dto.request.EventUpdateRequest;
-import com.study.ticketservice.event.application.dto.response.EventDetailResponse;
-import com.study.ticketservice.event.application.dto.response.EventListResponse;
-import com.study.ticketservice.event.application.dto.response.SeatDetailResponse;
-import com.study.ticketservice.event.domain.Event;
-import com.study.ticketservice.event.domain.EventErrorCode;
-import com.study.ticketservice.event.domain.Seat;
-import com.study.ticketservice.event.domain.SeatStatus;
+import com.study.ticketservice.domain.event.controller.request.EventCreateRequest;
+import com.study.ticketservice.domain.event.controller.request.EventUpdateRequest;
+import com.study.ticketservice.domain.event.controller.response.EventDetailResponse;
+import com.study.ticketservice.domain.event.controller.response.EventListResponse;
+import com.study.ticketservice.domain.event.controller.response.SeatDetailResponse;
+import com.study.ticketservice.domain.event.entity.Event;
+import com.study.ticketservice.domain.event.entity.Seat;
+import com.study.ticketservice.domain.event.enums.EventErrorCode;
+import com.study.ticketservice.domain.event.enums.SeatStatus;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;

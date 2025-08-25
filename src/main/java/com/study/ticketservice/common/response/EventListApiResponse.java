@@ -1,6 +1,7 @@
 package com.study.ticketservice.common.response;
 
-import com.study.ticketservice.event.application.dto.response.EventListResponse;
+import com.study.ticketservice.domain.event.controller.response.EventListResponse;
+
 import java.util.List;
 
 /**

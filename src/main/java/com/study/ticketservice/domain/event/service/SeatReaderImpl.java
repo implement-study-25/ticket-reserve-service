@@ -1,10 +1,11 @@
-package com.study.ticketservice.event.infrastructure;
+package com.study.ticketservice.domain.event.service;
 
 import com.study.ticketservice.common.exception.ApiException;
-import com.study.ticketservice.event.application.SeatReader;
-import com.study.ticketservice.event.domain.EventErrorCode;
-import com.study.ticketservice.event.domain.Seat;
-import com.study.ticketservice.event.domain.SeatStatus;
+import com.study.ticketservice.domain.event.entity.Seat;
+import com.study.ticketservice.domain.event.entity.SeatEntity;
+import com.study.ticketservice.domain.event.enums.EventErrorCode;
+import com.study.ticketservice.domain.event.enums.SeatStatus;
+import com.study.ticketservice.domain.event.repository.SeatJpaRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 

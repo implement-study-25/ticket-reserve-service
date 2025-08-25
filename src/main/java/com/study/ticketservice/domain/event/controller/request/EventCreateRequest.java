@@ -1,4 +1,4 @@
-package com.study.ticketservice.event.application.dto.request;
+package com.study.ticketservice.domain.event.controller.request;
 
 import java.time.LocalDateTime;
 

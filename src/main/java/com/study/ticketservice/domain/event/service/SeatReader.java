@@ -1,7 +1,8 @@
-package com.study.ticketservice.event.application;
+package com.study.ticketservice.domain.event.service;
 
-import com.study.ticketservice.event.domain.Seat;
-import com.study.ticketservice.event.domain.SeatStatus;
+
+import com.study.ticketservice.domain.event.entity.Seat;
+import com.study.ticketservice.domain.event.enums.SeatStatus;
 
 import java.util.List;
 
@@ -15,7 +16,7 @@ public interface SeatReader {
      * 좌석 ID로 단일 좌석 조회
      * @param seatId 조회할 좌석 ID
      * @return Seat 도메인 객체
-     * @throws ApiException 좌석이 존재하지 않을 경우 SEAT_NOT_FOUND
+     * @throws com.study.ticketservice.common.exception.ApiException 좌석이 존재하지 않을 경우 SEAT_NOT_FOUND
      */
     Seat findById(Long seatId);
     
