@@ -1,8 +1,8 @@
-package com.study.ticketservice.event.application.dto.response;
+package com.study.ticketservice.domain.event.controller.response;
 
-import com.study.ticketservice.event.domain.Seat;
-import com.study.ticketservice.event.domain.SeatStatus;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.study.ticketservice.domain.event.entity.Seat;
+import com.study.ticketservice.domain.event.enums.SeatStatus;
 
 /**
  * 좌석 상세 정보 응답 DTO

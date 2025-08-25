@@ -1,4 +1,4 @@
-package com.study.ticketservice.event.domain;
+package com.study.ticketservice.domain.event.enums;
 
 import com.study.ticketservice.common.response.ErrorCode;
 import lombok.AllArgsConstructor;

@@ -1,4 +1,4 @@
-package com.study.ticketservice.event.domain;
+package com.study.ticketservice.domain.event.enums;
 
 /**
  * 좌석 상태를 나타내는 열거형

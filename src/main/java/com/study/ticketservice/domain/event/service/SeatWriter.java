@@ -1,6 +1,7 @@
-package com.study.ticketservice.event.application;
+package com.study.ticketservice.domain.event.service;
 
-import com.study.ticketservice.event.domain.Seat;
+
+import com.study.ticketservice.domain.event.entity.Seat;
 
 import java.util.List;
 

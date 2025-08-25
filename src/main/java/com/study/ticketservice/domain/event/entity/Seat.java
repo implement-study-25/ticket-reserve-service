@@ -1,6 +1,9 @@
-package com.study.ticketservice.event.domain;
+package com.study.ticketservice.domain.event.entity;
 
 import com.study.ticketservice.common.exception.ApiException;
+import com.study.ticketservice.domain.event.enums.EventErrorCode;
+import com.study.ticketservice.domain.event.enums.SeatStatus;
+
 import java.time.LocalDateTime;
 
 /**
@@ -18,7 +21,7 @@ public class Seat {
     
     // 가격 및 상태
     private int price;
-    private SeatStatus status; 
+    private SeatStatus status;
     
     // 임시 선점 관련
     private LocalDateTime holdExpiresAt;

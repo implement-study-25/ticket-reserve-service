@@ -1,5 +1,8 @@
-package com.study.ticketservice.event.domain;
+package com.study.ticketservice.domain.event.entity;
 import com.study.ticketservice.common.exception.ApiException;
+import com.study.ticketservice.domain.event.enums.EventErrorCode;
+import com.study.ticketservice.domain.event.enums.EventStatus;
+
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -56,7 +59,7 @@ public class Event {
         
         int calculatedSeats = totalRows * totalCols;
         if (totalSeats != calculatedSeats) {
-            throw new ApiException(EventErrorCode.INVALID_PARAMETER, 
+            throw new ApiException(EventErrorCode.INVALID_PARAMETER,
                 "총 좌석 수(" + totalSeats + ")는 행×열(" + calculatedSeats + ")과 일치해야 합니다");
         }
         

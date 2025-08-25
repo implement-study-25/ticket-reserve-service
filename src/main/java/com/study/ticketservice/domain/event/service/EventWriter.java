@@ -1,6 +1,7 @@
-package com.study.ticketservice.event.application;
+package com.study.ticketservice.domain.event.service;
 
-import com.study.ticketservice.event.domain.Event;
+
+import com.study.ticketservice.domain.event.entity.Event;
 
 /**
  * Event 쓰기 전용 인터페이스

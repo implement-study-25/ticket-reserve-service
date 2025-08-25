@@ -1,7 +1,9 @@
-package com.study.ticketservice.event.infrastructure;
+package com.study.ticketservice.domain.event.service;
 
-import com.study.ticketservice.event.application.EventWriter;
-import com.study.ticketservice.event.domain.Event;
+
+import com.study.ticketservice.domain.event.entity.Event;
+import com.study.ticketservice.domain.event.entity.EventEntity;
+import com.study.ticketservice.domain.event.repository.EventJpaRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 

@@ -1,9 +1,10 @@
-package com.study.ticketservice.event.infrastructure;
+package com.study.ticketservice.domain.event.service;
 
 import com.study.ticketservice.common.exception.ApiException;
-import com.study.ticketservice.event.application.EventReader;
-import com.study.ticketservice.event.domain.EventErrorCode;
-import com.study.ticketservice.event.domain.Event;
+import com.study.ticketservice.domain.event.entity.Event;
+import com.study.ticketservice.domain.event.entity.EventEntity;
+import com.study.ticketservice.domain.event.enums.EventErrorCode;
+import com.study.ticketservice.domain.event.repository.EventJpaRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

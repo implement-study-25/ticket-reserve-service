@@ -1,6 +1,6 @@
-package com.study.ticketservice.event.application;
+package com.study.ticketservice.domain.event.service;
 
-import com.study.ticketservice.event.domain.Event;
+import com.study.ticketservice.domain.event.entity.Event;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
@@ -14,7 +14,7 @@ public interface EventReader {
      * 이벤트 ID로 단일 이벤트 조회
      * @param eventId 조회할 이벤트 ID
      * @return Event 도메인 객체
-     * @throws ApiException 이벤트가 존재하지 않을 경우 EVENT_NOT_FOUND
+     * @throws com.study.ticketservice.common.exception.ApiException 이벤트가 존재하지 않을 경우 EVENT_NOT_FOUND
      */
     Event findById(Long eventId);
     

@@ -1,14 +1,14 @@
-package com.study.ticketservice.event.presentation;
+package com.study.ticketservice.domain.event.controller;
 
 import com.study.ticketservice.common.response.ApiResponse;
-import com.study.ticketservice.event.application.EventService;
-import com.study.ticketservice.event.application.dto.request.EventCreateRequest;
-import com.study.ticketservice.event.application.dto.request.EventUpdateRequest;
-import com.study.ticketservice.event.application.dto.response.EventDetailResponse;
-import com.study.ticketservice.event.application.dto.response.EventListResponse;
-import com.study.ticketservice.event.application.dto.response.EventStatusResponse;
-import com.study.ticketservice.event.application.dto.response.SeatDetailResponse;
-import com.study.ticketservice.event.domain.SeatStatus;
+import com.study.ticketservice.domain.event.enums.SeatStatus;
+import com.study.ticketservice.domain.event.service.EventService;
+import com.study.ticketservice.domain.event.controller.request.EventCreateRequest;
+import com.study.ticketservice.domain.event.controller.request.EventUpdateRequest;
+import com.study.ticketservice.domain.event.controller.response.EventDetailResponse;
+import com.study.ticketservice.domain.event.controller.response.EventListResponse;
+import com.study.ticketservice.domain.event.controller.response.EventStatusResponse;
+import com.study.ticketservice.domain.event.controller.response.SeatDetailResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -76,7 +76,7 @@ public class EventApiController {
     public ResponseEntity<ApiResponse<EventStatusResponse>> publishEvent(@PathVariable Long eventId) {
         EventDetailResponse eventDetail = eventService.publishEvent(eventId);
         EventStatusResponse response = EventStatusResponse.from(eventDetail);
-        
+
         return ApiResponse.success(response);
     }
 
